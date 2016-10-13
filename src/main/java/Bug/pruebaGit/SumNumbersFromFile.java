@@ -28,6 +28,13 @@ public class SumNumbersFromFile
     	
     	int sum = enteros.reduce((integer1,integer2) -> (integer1 + integer2));
     	
+    	/*esto se puede simplificar
+    	 * int sum = sparkContext
+    	 * 				.textFile(args[0]);
+    	 * 				.map(s -> Integer.valueOf(s));
+    	 * 				.reduce((integer1,integer2) -> (integer1 + integer2));
+    	 * */
+    	
         System.out.println( "La suma es: " + sum );
         
         sparkContext.close();
